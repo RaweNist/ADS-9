@@ -5,8 +5,8 @@
 class PMTree {
  private:
   struct Node {
-      char data;
-      std::vector<Node*> children;
+    char data;
+    std::vector<Node*> children;
   };
   Node* _root;
   Node* createTree(Node* root, std::vector<char> numbers) {
@@ -42,8 +42,7 @@ class PMTree {
   void getPerms(Node* root, std::vector<std::vector<char>>& v, std::vector<char> perm) {
     if (root->children.empty()) {
       v.push_back(perm);
-    }
-    else {
+    } else {
       for (int i = 0; i < root->children.size(); ++i) {
         perm.push_back(root->children[i]->data);
         getPerms(root->children[i], v, perm);
