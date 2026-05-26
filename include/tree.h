@@ -38,7 +38,7 @@ class PMTree {
     }
     return root;
   }
-  void getPerms(Node* root, std::vector<std::vector<char>>& v, 
+  void getPerms(Node* root, std::vector<std::vector<char>>& v,
 std::vector<char> perm) {
     if (root->children.empty()) {
       v.push_back(perm);
@@ -62,8 +62,7 @@ std::vector<char> perm) {
   }
 
  public:
-  PMTree(std::vector<char> numbers) {
-    _root = nullptr;
+  explicit PMTree(std::vector<char> numbers) : _root(nullptr) {
     createTree(_root, numbers);
   }
   ~PMTree() {}
