@@ -13,7 +13,7 @@ class PMTree {
     if (root == nullptr) {
       root = new Node;
       _root = root;
-      root->data = NULL;
+      root->data = '\0';
       for (int i = 0; i < numbers.size(); ++i) {
         Node* node = new Node;
         node->data = numbers[i];
