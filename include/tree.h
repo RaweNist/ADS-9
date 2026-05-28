@@ -62,7 +62,7 @@ std::vector<char> perm) {
   }
 
  public:
-  explicit PMTree(std::vector<char>& numbers) : _root(nullptr) {
+  explicit PMTree(std::vector<char> numbers) : _root(nullptr) {
     createTree(_root, numbers);
   }
   ~PMTree() {}
