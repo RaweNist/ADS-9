@@ -50,12 +50,16 @@ std::vector<char> perm) {
       }
     }
   }
+  int fact(int num) {
+    int f = 1;
+    for (int i = 1; i <= num; i++) {
+      f *= i;
+    }
+    return f;
+  }
   void getPerm(Node* root, std::vector<char>& perm, int num) {
     if (root->children.size() > 0) {
-      int del = 1;
-      for (int i = 1; i <= root->children.size() - 1; i++) {
-        del *= i;
-      }
+      int del = fact(root->children.size()-1);
       perm.push_back(root->children[num / del]->data);
       getPerm(root->children[num / del], perm, num % del);
     }
@@ -72,7 +76,8 @@ std::vector<char> perm) {
   }
   std::vector<char> getPermByNumber(int num) {
     std::vector<char> perm;
-    getPerm(_root, perm, num);
+    if (num + 1 <= fact(_root->children.size()))
+      getPerm(_root, perm, num);
     return perm;
   }
 };
