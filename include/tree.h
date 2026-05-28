@@ -9,7 +9,7 @@ class PMTree {
     std::vector<Node*> children;
   };
   Node* _root;
-  Node* createTree(Node* root, std::vector<char> numbers) {
+  Node* createTree(Node* root, std::vector<char>& numbers) {
     if (root == nullptr) {
       root = new Node;
       _root = root;
@@ -62,7 +62,7 @@ std::vector<char> perm) {
   }
 
  public:
-  explicit PMTree(std::vector<char> numbers) : _root(nullptr) {
+  explicit PMTree(std::vector<char>& numbers) : _root(nullptr) {
     createTree(_root, numbers);
   }
   ~PMTree() {}
