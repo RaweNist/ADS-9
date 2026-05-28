@@ -14,7 +14,10 @@ std::vector<std::vector<char>> getAllPerms(PMTree tree) {
 
 std::vector<char> getPerm1(PMTree& tree, int num) {
   std::vector<std::vector<char>> all = getAllPerms(tree);
-  return all[num-1];
+  if (all.size() >= num)
+    return all[num - 1];
+  else all[0].clear();
+  return all[0];
 }
 
 std::vector<char> getPerm2(PMTree& tree, int num) {
